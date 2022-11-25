@@ -5,8 +5,16 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("Notification")),
+    return const Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Text(
+          "Notification",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
   }
 }

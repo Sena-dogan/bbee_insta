@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:insta_ejderiya/home_page.dart';
+import 'package:insta_ejderiya/home.dart';
 import 'package:insta_ejderiya/assets.dart';
 
 void main() {

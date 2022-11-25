@@ -2,10 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:insta_ejderiya/Pages/home.dart';
+import 'package:insta_ejderiya/Pages/home_page.dart';
 import 'package:insta_ejderiya/Pages/notifications.dart';
 import 'package:insta_ejderiya/Pages/profile.dart';
 import 'package:insta_ejderiya/Pages/search.dart';
+// import 'package:insta_ejderiya/widgets/modal_bottom_sheet.dart';
+import 'package:action_sheet/action_sheet.dart';
+import 'package:insta_ejderiya/widgets/modal_bottom_sheet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,20 +49,23 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.all(16.0),
             tabs: [
               GButton(
-                icon: Icons.home_outlined,            
+                icon: Icons.home_outlined,
                 text: "Home",
               ),
               GButton(
-                icon: Icons.search_rounded,            
+                icon: Icons.search_rounded,
                 text: "Search",
               ),
               GButton(
-                icon: Icons.favorite_border_rounded,            
+                icon: Icons.favorite_border_rounded,
                 text: "Likes",
               ),
               GButton(
-                icon: Icons.person_outline_outlined,            
+                icon: Icons.person_outline_outlined,
                 text: "Profile",
+                onPressed: () {
+                  showActionSheet(context);
+                },
               ),
             ],
           ),
