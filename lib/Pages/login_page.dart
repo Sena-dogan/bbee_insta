@@ -1,9 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:insta_ejderiya/widgets/my_text_field.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  // text editing controllers
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class LoginPage extends StatelessWidget {
 
   PreferredSizeWidget _appBar() {
     return AppBar(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Color.fromARGB(238, 202, 197, 216),
       //automaticallyImplyLeading: false,
       elevation: 0,
     );
@@ -23,37 +28,87 @@ class LoginPage extends StatelessWidget {
 
   Widget _body(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Color.fromARGB(238, 202, 197, 216),
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 50),
+              SizedBox(height: 30),
 
               //logo
               Icon(
                 Icons.lock,
                 size: 100,
+                // shadows: <Shadow>[
+                //   Shadow(
+                //     color: Color.fromARGB(165, 58, 35, 96),
+                //     blurRadius: 3.0,
+                //   )
+                // ],
               ),
 
-              SizedBox(height: 50),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.001),
+              Divider(color: Color.fromARGB(141, 58, 35, 96), thickness: 1.0, indent: 160.0, endIndent: 160.0,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              //welcome back, you've been missed!
+              //welcome back to Instagram!
               Text(
-                "Welcome back, you've been missed!",
+                "Welcome back!\n           to,",
                 style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 16,
+                  color: Color.fromARGB(255, 58, 35, 96),
+                  fontSize: 14,
                 ),
+              ),
+              Text(
+                "Instagram",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 58, 35, 96),
+                    fontSize: 70,
+                    fontFamily: "Billabong"),
               ),
 
               SizedBox(height: 25),
 
-              //username textfield
+              // textfields
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Column(
+                  children: [
+                    //username textfield
+                    MyTextFieldWidget(
+                      title: "User Name",
+                      icon: Icons.person_outline,
+                      controller: usernameController,
+                    ),
 
-              //password textfield
+                    SizedBox(height: 10),
 
-              //forgot password?
+                    //password textfield
+                    MyTextFieldWidget(
+                      title: "Password",
+                      icon: Icons.password_outlined,
+                      controller: passwordController,
+                    ),
+
+                    SizedBox(height: 10),
+
+                    // forgot password?
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 58, 35, 96)),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
 
               //sign in button
 
