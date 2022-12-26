@@ -7,7 +7,6 @@ import 'package:insta_ejderiya/Pages/notifications.dart';
 import 'package:insta_ejderiya/Pages/profile.dart';
 import 'package:insta_ejderiya/Pages/search.dart';
 // import 'package:insta_ejderiya/widgets/modal_bottom_sheet.dart';
-import 'package:action_sheet/action_sheet.dart';
 import 'package:insta_ejderiya/widgets/modal_bottom_sheet.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,7 +63,15 @@ class _HomePageState extends State<HomePage> {
                 icon: Icons.person_outline_outlined,
                 text: "Profile",
                 onPressed: () {
-                  showActionSheet(context);
+                  var sheet = MBottomSheet(
+                    title: "bumblebee",
+                    subtitle: "bee",
+                    primaryText: "camaro",
+                    acceptButtonText: "pika",
+                    rejectButtonText: "rejectButtonText",
+                    acceptFunc: (() {}),
+                  );
+                  sheet.showBottomSheet(context);
                 },
               ),
             ],
